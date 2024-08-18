@@ -1,0 +1,5 @@
+quote_style = 'ForceSingle'
+call_parentheses = 'None'
+collapse_simple_statement = 'Never'
+indent_type = 'Tabs'
+line_endings = 'Unix'
