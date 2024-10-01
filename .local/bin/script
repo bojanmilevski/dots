@@ -3,11 +3,16 @@
 [ "$#" -ne 1 ] && echo "Only 1 argument required!" && exit 1
 
 FILE="$BINDIR/$1"
+SHEBANG="#!/bin/sh"
 
 if [ ! -f "$FILE" ]; then
 	touch "$FILE"
-	echo "#!/bin/sh" > "$FILE"
+	echo "$SHEBANG" >"$FILE"
 	chmod +x "$FILE"
 fi
 
 "$EDITOR" "$FILE"
+
+if [ "$(cat $FILE)" = "$SHEBANG" ]; then
+	rm "$FILE"
+fi

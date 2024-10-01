@@ -11,11 +11,10 @@ return {
 		enable_autosnippets = true,
 		history = true,
 		updateevents = 'TextChanged,TextChangedI',
+		function()
+			require('luasnip.loaders.from_vscode').lazy_load()
+		end,
 	},
-
-	config = function()
-		require('luasnip.loaders.from_vscode').lazy_load()
-	end,
 
 	keys = {
 		{

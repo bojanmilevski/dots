@@ -3,15 +3,17 @@ return {
 	dependencies = 'nvim-tree/nvim-web-devicons',
 	event = 'VeryLazy',
 
-	opts = {
+	opts = function()
+		local icons = require 'utils.icons'
+
 		signs = {
-			error = '',
-			warning = '',
-			hint = '󰌵',
-			information = '',
-			other = '',
-		},
-	},
+			error = icons['ERROR'],
+			warning = icons['WARN'],
+			hint = icons['HINT'],
+			information = icons['INFO'],
+			other = icons['OTHER'],
+		}
+	end,
 
 	keys = {
 		{ '<leader>e', '<cmd>Trouble diagnostics toggle focus=true<cr>' },

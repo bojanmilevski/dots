@@ -1,32 +1,45 @@
 #!/bin/sh
 
+# NOTE: this script does not work with filenames that have empty spaces in them
+
 set -e
 
-[ ! -f "/usr/bin/rsync" ] && echo "This script requires rsync to run!" && exit 1
 [ "$#" -ne 1 ] && echo "You need to provide a destination directory." && exit 1
 
-DST="$(realpath "$1")"
-
-[ ! -d "$DST" ] && mkdir -p "$DST"
+DESTINATION="$(realpath "$1")"
 
 backup() {
-	DIR_NAME="$(dirname "$1" | cut -d "/" -f 4,5,6,7,8,9,10)"
-	mkdir -p "$DST/$DIR_NAME"
-	rsync --archive --recursive --verbose "$1" "$DST/$DIR_NAME"
+	SRC="$HOME/$1"
+	[ ! -e "$SRC" ] && echo "$SRC does not exist. Skipping..." && exit 1
+	[ -e "$DESTINATION/$1" ] && rm -rf "$DESTINATION/$1"
+	DST="$DESTINATION/$(dirname "$1")"
+	mkdir -p "$DST"
+	cp -arv "$SRC" "$DST"
 }
 
-# backup "$HOME/.config/discord/settings.json"
-# backup "$HOME/.config/gtk-2.0/gtkrc-2.0"
-# backup "$HOME/.config/gtk-3.0/settings.ini"
-# backup "$HOME/.config/gtk-4.0/settings.ini"
-backup "$HOME/.config/fish/config.fish"
-backup "$HOME/.config/kitty/kitty.conf"
-backup "$HOME/.config/mpv/mpv.conf"
-backup "$HOME/.config/nvim"
-backup "$HOME/.config/python/pythonrc"
-backup "$HOME/.config/ruff/ruff.toml"
-backup "$HOME/.config/sh"
-backup "$HOME/.config/wget/wgetrc"
-backup "$HOME/.librewolf/librewolf.overrides.cfg"
-backup "$HOME/.local/bin"
-backup "$HOME/.local/share/default/index.theme"
+TARGETS="
+	.config/fish/config.fish
+	.config/kitty/kitty.conf
+	.config/mpv/mpv.conf
+	.config/nvim
+	.config/python/pythonrc
+	.config/ruff/ruff.toml
+	.config/sh
+	.config/topgrade.d/topgrade.toml
+	.config/wget/wgetrc
+	.librewolf/librewolf.overrides.cfg
+	.local/bin
+	.local/share/default/index.theme
+"
+
+# The following files are backed up once to maintain a permanent state, because
+# they get filled with values I do not need.
+#
+# .config/discord/settings.json
+# .config/gtk-2.0/gtkrc-2.0
+# .config/gtk-3.0/settings.ini
+# .config/gtk-4.0/settings.ini
+
+for target in $TARGETS; do
+	backup "$target"
+done

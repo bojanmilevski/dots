@@ -1,4 +1,4 @@
 #!/bin/sh
 
 [ "$#" -ne 1 ] && echo "Please provide (only) one argument!" && exit 1
-pacman -Qqs "$1"
+paru --query --quiet --search "$1"

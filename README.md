@@ -1,6 +1,6 @@
 # DOTFILES
 
-Bojan Milevski's Linux dotfiles.
+Bojan Milevski's various program configuration files.
 
 ## NOTE
 

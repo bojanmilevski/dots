@@ -1,4 +1,0 @@
-#!/bin/sh
-
-[ "$#" -ne 0 ] && echo "No arguments needed!" && exit 1
-paru -Syyu --skipreview

@@ -7,7 +7,7 @@ return {
 		'kevinhwang91/promise-async',
 		{
 			'luukvbaal/statuscol.nvim',
-			config = function()
+			opts = function()
 				local builtin = require 'statuscol.builtin'
 				require('statuscol').setup {
 					relculright = true,

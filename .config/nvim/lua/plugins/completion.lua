@@ -17,19 +17,6 @@ return {
 	opts = function()
 		local cmp = require 'cmp'
 
-		local function border(hl_name)
-			return {
-				{ '╭', hl_name },
-				{ '─', hl_name },
-				{ '╮', hl_name },
-				{ '│', hl_name },
-				{ '╯', hl_name },
-				{ '─', hl_name },
-				{ '╰', hl_name },
-				{ '│', hl_name },
-			}
-		end
-
 		cmp.setup {
 			sources = {
 				{ name = 'nvim_lsp' },
@@ -47,17 +34,6 @@ return {
 				expand = function(args)
 					require('luasnip').lsp_expand(args.body)
 				end,
-			},
-
-			window = {
-				completion = {
-					border = border 'CmpBorder',
-				},
-
-				documentation = {
-					border = border 'CmpDocBorder',
-					winhighlight = 'Normal:CmpDoc',
-				},
 			},
 
 			formatting = {

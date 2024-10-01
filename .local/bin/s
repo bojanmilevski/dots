@@ -1,4 +1,4 @@
 #!/bin/sh
 
 [ "$#" -ne 1 ] && echo "Please provide (only) one argument!" && exit 1
-paru -Ss "$1"
+paru --sync --search "$1"
