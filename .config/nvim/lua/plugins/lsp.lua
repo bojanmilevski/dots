@@ -11,26 +11,11 @@ return {
 	},
 
 	config = function()
-		local servers = {
-			'bashls',
-			'clangd',
-			'cmake',
-			'cssls',
-			'emmet_ls',
-			'eslint',
-			'html',
-			'jsonls',
-			'lua_ls',
-			'pylsp',
-			'pyright',
-			'tailwindcss',
-			'ts_ls',
-			'yamlls',
-		}
-
+		local servers = require 'utils.lsps'
 		local icons = require 'utils.icons'
-
+		local lspconfig = require 'lspconfig'
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
+
 		capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 		capabilities.textDocument.completion.completionItem.snippetSupport = true
 		capabilities.textDocument.foldingRange = {
@@ -51,7 +36,7 @@ return {
 		end
 
 		for _, server in ipairs(servers) do
-			require('lspconfig')[server].setup {
+			lspconfig[server].setup {
 				capabilities = capabilities,
 				on_attach = on_attach,
 			}
@@ -83,12 +68,6 @@ return {
 
 					return icons['HINT']
 				end,
-			},
-
-			float = {
-				source = true,
-				header = '',
-				prefix = '',
 			},
 		}
 	end,

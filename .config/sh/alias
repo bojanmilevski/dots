@@ -3,6 +3,7 @@
 # alias vi="nvim"
 alias vi="$HOME/.local/share/bob/nightly/bin/nvim"
 
+alias adb="HOME=$XDG_DATA_HOME/android adb"
 alias cat="bat --paging=never"
 alias copy="wl-copy"
 alias cp="cp --preserve --recursive --verbose"
