@@ -23,6 +23,7 @@ TARGETS="
 	.config/mpv/mpv.conf
 	.config/nvim
 	.config/python/pythonrc
+	.config/ripgrep/config
 	.config/ruff/ruff.toml
 	.config/sh
 	.config/topgrade.d/topgrade.toml
