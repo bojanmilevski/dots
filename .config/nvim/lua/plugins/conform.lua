@@ -13,6 +13,7 @@ return {
 			bash = { 'shfmt' },
 			c = { 'clang_format' },
 			cpp = { 'clang_format' },
+			haskell = { 'fourmolu' },
 			html = { 'prettier' },
 			javascript = { 'prettier' },
 			javascriptreact = { 'prettier' },

@@ -2,5 +2,9 @@ return {
 	'folke/lazydev.nvim',
 	event = 'VeryLazy',
 	ft = 'lua',
-	opts = true,
+	opts = {
+		library = {
+			{ path = '${3rd}/luv/library', words = { 'vim%.uv' } },
+		},
+	},
 }

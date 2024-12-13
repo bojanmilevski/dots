@@ -14,14 +14,6 @@ return {
 		local servers = require 'utils.lsps'
 		local icons = require 'utils.icons'
 		local lspconfig = require 'lspconfig'
-		local capabilities = vim.lsp.protocol.make_client_capabilities()
-
-		capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
-		capabilities.textDocument.completion.completionItem.snippetSupport = true
-		capabilities.textDocument.foldingRange = {
-			dynamicRegistration = false,
-			lineFoldingOnly = true,
-		}
 
 		local on_attach = function(client, _)
 			if client.server_capabilities.documentHighlightProvider then
@@ -35,11 +27,10 @@ return {
 			end
 		end
 
-		for _, server in ipairs(servers) do
-			lspconfig[server].setup {
-				capabilities = capabilities,
-				on_attach = on_attach,
-			}
+		for server, config in pairs(servers) do
+			config.capabilities = require('blink.cmp').get_lsp_capabilities(config.capabilities)
+			config.on_attach = on_attach
+			lspconfig[server].setup(config)
 		end
 
 		vim.diagnostic.config {
@@ -73,11 +64,6 @@ return {
 	end,
 
 	keys = {
-		{ '<leader>a', vim.lsp.buf.code_action },
-		{ '<leader>r', vim.lsp.buf.rename },
-		{ 'gr', vim.lsp.buf.references },
-		{ 'gd', vim.lsp.buf.definition },
-		{ 'gt', vim.lsp.buf.type_definition },
 		{
 			'<leader>i',
 			function()
