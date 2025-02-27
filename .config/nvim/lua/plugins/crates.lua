@@ -3,5 +3,5 @@ return {
 	dependencies = 'nvim-lua/plenary.nvim',
 	event = 'VeryLazy',
 	ft = 'toml',
-	opts = true,
+	opts = {},
 }

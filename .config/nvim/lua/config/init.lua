@@ -1,4 +1,5 @@
-require 'config.settings'
 require 'config.autocmd'
+require 'config.diagnostic'
 require 'config.keybinds'
 require 'config.plugins'
+require 'config.settings'

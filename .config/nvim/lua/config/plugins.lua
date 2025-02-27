@@ -1,7 +1,11 @@
-local opts = {
+require('lazy').setup {
 	lockfile = vim.fn.stdpath 'data' .. '/lazy/lazy-lock.json',
 	debug = false,
 	concurrency = 50,
+
+	spec = {
+		import = 'plugins',
+	},
 
 	install = {
 		missing = true,
@@ -54,5 +58,3 @@ local opts = {
 		},
 	},
 }
-
-require('lazy').setup('plugins', opts)

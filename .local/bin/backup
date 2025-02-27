@@ -6,13 +6,13 @@ set -e
 
 [ "$#" -ne 1 ] && echo "You need to provide a destination directory." && exit 1
 
-DESTINATION="$(realpath "$1")"
+DESTINATION="$(realpath $1)"
 
 backup() {
 	SRC="$HOME/$1"
 	[ ! -e "$SRC" ] && echo "$SRC does not exist. Skipping..." && exit 1
 	[ -e "$DESTINATION/$1" ] && rm -rf "$DESTINATION/$1"
-	DST="$DESTINATION/$(dirname "$1")"
+	DST="$DESTINATION/$(dirname $1)"
 	mkdir -p "$DST"
 	cp -arv "$SRC" "$DST"
 }

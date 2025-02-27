@@ -1,23 +1,23 @@
 return {
 	'saghen/blink.cmp',
-	version = 'v0.*',
-	lazy = false,
+	version = '*',
+	event = 'VeryLazy',
 
 	dependencies = {
 		'rafamadriz/friendly-snippets',
-		'L3MON4D3/LuaSnip',
+		{
+			'L3MON4D3/LuaSnip',
+			version = 'v2.*',
+		},
 	},
 
 	opts = {
 		sources = {
-			completion = {
-				enabled_providers = {
-					'lsp',
-					'luasnip',
-					'snippets',
-					'path',
-					'buffer',
-				},
+			default = {
+				'lsp',
+				'snippets',
+				'path',
+				'buffer',
 			},
 		},
 
@@ -46,10 +46,11 @@ return {
 
 		appearance = {
 			use_nvim_cmp_as_default = true,
-			nerd_font_variant = 'mono',
 		},
 
 		snippets = {
+			preset = 'default',
+
 			expand = function(snippet)
 				require('luasnip').lsp_expand(snippet)
 			end,
@@ -77,6 +78,6 @@ return {
 	},
 
 	opts_extend = {
-		'sources.completion.enabled_providers',
+		'sources.default',
 	},
 }

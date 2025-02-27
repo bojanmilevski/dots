@@ -6,13 +6,12 @@ return {
 		{
 			'j-hui/fidget.nvim',
 			event = 'VeryLazy',
-			config = true,
+			opts = {},
 		},
 	},
 
 	config = function()
 		local servers = require 'utils.lsps'
-		local icons = require 'utils.icons'
 		local lspconfig = require 'lspconfig'
 
 		local on_attach = function(client, _)
@@ -32,35 +31,6 @@ return {
 			config.on_attach = on_attach
 			lspconfig[server].setup(config)
 		end
-
-		vim.diagnostic.config {
-			severity_sort = true,
-			underline = true,
-			update_in_insert = true,
-
-			signs = {
-				text = {
-					[vim.diagnostic.severity.ERROR] = icons['ERROR'],
-					[vim.diagnostic.severity.WARN] = icons['WARN'],
-					[vim.diagnostic.severity.HINT] = icons['HINT'],
-					[vim.diagnostic.severity.INFO] = icons['INFO'],
-				},
-			},
-
-			virtual_text = {
-				prefix = function(diagnostic)
-					if diagnostic.severity == vim.diagnostic.severity.ERROR then
-						return icons['ERROR']
-					elseif diagnostic.severity == vim.diagnostic.severity.WARN then
-						return icons['WARN']
-					elseif diagnostic.severity == vim.diagnostic.severity.INFO then
-						return icons['INFO']
-					end
-
-					return icons['HINT']
-				end,
-			},
-		}
 	end,
 
 	keys = {
@@ -69,7 +39,6 @@ return {
 			function()
 				vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 			end,
-			desc = 'Toggle LSP inlay hints',
 		},
 	},
 }

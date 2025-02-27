@@ -5,6 +5,7 @@ return {
 	dependencies = {
 		'nvim-lua/plenary.nvim',
 		'nvim-tree/nvim-web-devicons',
+		'nvim-telescope/telescope-frecency.nvim',
 	},
 
 	opts = {
@@ -18,6 +19,10 @@ return {
 		},
 	},
 
+	config = function()
+		require('telescope').load_extension 'frecency'
+	end,
+
 	keys = {
 		{
 			'<leader>tg',
@@ -25,18 +30,22 @@ return {
 				vim.cmd 'Telescope live_grep'
 			end,
 		},
-
 		{
 			'<leader>tf',
 			function()
 				vim.cmd 'Telescope find_files'
 			end,
 		},
-
 		{
 			'<leader>td',
 			function()
 				require('telescope.builtin').lsp_definitions()
+			end,
+		},
+		{
+			'<leader>tr',
+			function()
+				vim.cmd 'Telescope frecency'
 			end,
 		},
 	},
