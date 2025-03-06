@@ -1,5 +1,5 @@
 return {
-	'kylechui/nvim-surround',
+	'nvim-focus/focus.nvim',
 	event = 'VeryLazy',
 	opts = {},
 }

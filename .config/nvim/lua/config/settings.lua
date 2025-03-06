@@ -29,15 +29,6 @@ vim.o.undofile = true
 vim.o.directory = vim.fn.stdpath 'data' .. '/swap'
 vim.o.swapfile = true
 
--- disable native plugins
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-vim.g.loaded_node_provider = 0
-vim.g.loaded_perl_provider = 0
-vim.g.loaded_python3_provider = 0
-vim.g.loaded_python_provider = 0
-vim.g.loaded_ruby_provider = 0
-
 -- folding
 vim.o.fillchars = 'eob: ,fold: ,foldopen:,foldsep: ,foldclose:'
 vim.o.foldcolumn = '1'
@@ -47,9 +38,16 @@ vim.o.foldlevel = 99
 vim.o.foldlevelstart = 99
 vim.o.foldmethod = 'expr'
 
+-- disable native plugins
+vim.g.loaded_netrw = 0
+vim.g.loaded_netrwPlugin = 0
+vim.g.loaded_node_provider = 0
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_python3_provider = 0
+vim.g.loaded_python_provider = 0
+vim.g.loaded_ruby_provider = 0
+
 -- other
--- vim.g.did_load_filetypes = 0
-vim.g.do_filetype_lua = 1
 vim.o.background = 'dark'
 vim.o.clipboard = 'unnamedplus'
 vim.o.cmdheight = 0

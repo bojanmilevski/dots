@@ -1,6 +1,5 @@
 local servers = {
 	bashls = {},
-	clangd = {},
 	cmake = {},
 	cssls = {},
 	emmet_ls = {},
@@ -14,6 +13,14 @@ local servers = {
 	tailwindcss = {},
 	ts_ls = {},
 	yamlls = {},
+
+	clangd = {
+		cmd = {
+			'clangd',
+			'--background-index',
+			'--clang-tidy',
+		},
+	},
 }
 
 return servers

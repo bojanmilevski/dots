@@ -14,3 +14,4 @@ It it assumed that all configured tools are installed through your system's pack
 - git
 - language servers
 - linters
+- treesitter parsers
