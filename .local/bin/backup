@@ -9,28 +9,28 @@ set -e
 DESTINATION="$(realpath $1)"
 
 backup() {
-	SRC="$HOME/$1"
-	[ ! -e "$SRC" ] && echo "$SRC does not exist. Skipping..." && exit 1
-	[ -e "$DESTINATION/$1" ] && rm -rf "$DESTINATION/$1"
-	DST="$DESTINATION/$(dirname $1)"
-	mkdir -p "$DST"
-	cp -arv "$SRC" "$DST"
+  SRC="$HOME/$1"
+  [ ! -e "$SRC" ] && echo "$SRC does not exist. Skipping..." && exit 1
+  [ -e "$DESTINATION/$1" ] && rm -rf "$DESTINATION/$1"
+  DST="$DESTINATION/$(dirname $1)"
+  mkdir -p "$DST"
+  cp -arv "$SRC" "$DST"
 }
 
 TARGETS="
-	.config/fish/config.fish
-	.config/kitty/kitty.conf
-	.config/mpv/mpv.conf
-	.config/nvim
-	.config/python/pythonrc
-	.config/ripgrep/config
-	.config/ruff/ruff.toml
-	.config/sh
-	.config/topgrade.d/topgrade.toml
-	.config/wget/wgetrc
-	.librewolf/librewolf.overrides.cfg
-	.local/bin
-	.local/share/default/index.theme
+  .config/fish/config.fish
+  .config/kitty/kitty.conf
+  .config/mpv/mpv.conf
+  .config/nvim
+  .config/python/pythonrc
+  .config/ripgrep/config
+  .config/ruff/ruff.toml
+  .config/sh
+  .config/topgrade.d/topgrade.toml
+  .config/wget/wgetrc
+  .librewolf/librewolf.overrides.cfg
+  .local/bin
+  .local/share/default/index.theme
 "
 
 # The following files are backed up once to maintain a permanent state, because
@@ -42,5 +42,5 @@ TARGETS="
 # .config/gtk-4.0/settings.ini
 
 for target in $TARGETS; do
-	backup "$target"
+  backup "$target"
 done

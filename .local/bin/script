@@ -6,13 +6,13 @@ FILE="$BINDIR/$1"
 SHEBANG="#!/bin/sh"
 
 if [ ! -f "$FILE" ]; then
-	touch "$FILE"
-	echo "$SHEBANG" >"$FILE"
-	chmod +x "$FILE"
+  touch "$FILE"
+  echo "$SHEBANG" >"$FILE"
+  chmod +x "$FILE"
 fi
 
 "$EDITOR" "$FILE"
 
 if [ "$(cat $FILE)" = "$SHEBANG" ]; then
-	rm "$FILE"
+  rm "$FILE"
 fi

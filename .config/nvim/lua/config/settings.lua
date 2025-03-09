@@ -3,13 +3,13 @@ vim.o.number = true
 vim.o.relativenumber = true
 
 -- indentation
-local tab_spaces = 2
+local spaces = 2
 vim.o.autoindent = true
-vim.o.shiftwidth = tab_spaces
+vim.o.shiftwidth = spaces
 vim.o.smartindent = true
-vim.o.softtabstop = tab_spaces
-vim.o.tabstop = tab_spaces
-vim.opt.expandtab = false
+vim.o.softtabstop = spaces
+vim.o.tabstop = spaces
+vim.opt.expandtab = true
 
 -- scroll offset
 local scroll_offset = 8

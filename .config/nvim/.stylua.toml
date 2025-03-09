@@ -1,5 +1,9 @@
-quote_style = 'ForceSingle'
 call_parentheses = 'None'
 collapse_simple_statement = 'Never'
-indent_type = 'Tabs'
+indent_type = 'Spaces'
+indent_width = 2
 line_endings = 'Unix'
+quote_style = 'ForceSingle'
+
+[sort_requires]
+enabled = true

@@ -1,4 +1,5 @@
 return {
-	'vladdoster/remember.nvim',
-	opts = {},
+  'vladdoster/remember.nvim',
+  lazy = false,
+  opts = {},
 }

@@ -1,5 +1,5 @@
 return {
-	'nvim-focus/focus.nvim',
-	event = 'VeryLazy',
-	opts = {},
+  'nvim-focus/focus.nvim',
+  event = 'VeryLazy',
+  opts = {},
 }
