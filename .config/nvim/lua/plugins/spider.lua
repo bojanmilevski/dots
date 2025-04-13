@@ -28,7 +28,7 @@ return {
     {
       'ge',
       function()
-        require('spider').motion 'g'
+        require('spider').motion 'ge'
       end,
     },
   },

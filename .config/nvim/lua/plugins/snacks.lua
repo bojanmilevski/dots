@@ -8,16 +8,15 @@ return {
   },
 
   opts = {
-    animate = {},
     bigfile = {},
     bufdelete = {},
     dashboard = {},
     git = {},
     notifier = {},
+    picker = {},
     quickfile = {},
     rename = {},
     scope = {},
-    statuscolumn = {},
     words = {},
     zen = {},
 
@@ -31,12 +30,15 @@ return {
       },
     },
 
-    picker = {
-      finder = 'ripgrep',
-    },
-
     matcher = {
       frecency = true,
+    },
+
+    statuscolumn = {
+      folds = {
+        open = true,
+        git_hl = true,
+      },
     },
   },
 
@@ -53,16 +55,14 @@ return {
         Snacks.zen()
       end,
     },
-
-    -- picker
     {
-      '<leader>tg',
+      '<leader>pg',
       function()
         Snacks.picker 'grep'
       end,
     },
     {
-      '<leader>tf',
+      '<leader>pf',
       function()
         Snacks.picker 'files'
       end,

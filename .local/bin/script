@@ -2,7 +2,7 @@
 
 [ "$#" -ne 1 ] && echo "Only 1 argument required!" && exit 1
 
-FILE="$BINDIR/$1"
+FILE="$HOME/.local/bin/$1"
 SHEBANG="#!/bin/sh"
 
 if [ ! -f "$FILE" ]; then
@@ -13,6 +13,4 @@ fi
 
 "$EDITOR" "$FILE"
 
-if [ "$(cat $FILE)" = "$SHEBANG" ]; then
-  rm "$FILE"
-fi
+[ "$(cat "$FILE")" = "$SHEBANG" ] && rm "$FILE"

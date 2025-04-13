@@ -1,2 +1,2 @@
 [linux]
-yay_arguments = "--skipreview"
+yay_arguments = "--skipreview --noconfirm"

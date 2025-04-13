@@ -1,17 +1,11 @@
 # DOTFILES
 
-Bojan Milevski's various program configuration files.
+Various program configuration files.
 
-## NOTE
+# NOTES
 
-It it assumed that all configured tools are installed through your system's package manager:
-
-- [fd](https://github.com/sharkdp/fd)
-- [lazy package manager](https://github.com/folke/lazy.nvim)
-- [ripgrep](https://github.com/BurntSushi/ripgrep)
-- debuggers
-- formatters
-- git
-- language servers
-- linters
-- treesitter parsers
+- It it assumed that all required tools are installed through your system's
+  package manager.
+- I have the `lazy` package manager installed through my system package manager.
+- For the various programs you might need, please refer to [my list of programs
+  I use](https://github.com/bojanmilevski/scripts/blob/main/programs.txt).
