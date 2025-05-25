@@ -3,11 +3,6 @@
 # path
 export PATH="$(find "$HOME/.local/bin" -type d -printf %p:)$PATH"
 
-# programs
-export BROWSER="firefox"
-export EDITOR="nvim"
-export TERMINAL="kitty"
-
 # xdg
 # export XDG_RUNTIME_DIR="$(mktemp -d "/tmp/$(id -u)-runtime-dir.XXX")"
 export XDG_CACHE_HOME="$HOME/.cache"
@@ -56,6 +51,7 @@ export SQLITE_HISTORY="$XDG_DATA_HOME/sqlite_history"
 export SSH_ASKPASS="/usr/bin/ksshaskpass"
 export SSH_ASKPASS_REQUIRE="prefer"
 export STEAM_RUNTIME="0"
+export TERM="xterm-256color"
 export TMUX_TMPDIR="$XDG_RUNTIME_DIR"
 export VCPKG_ROOT="$XDG_DATA_HOME/vcpkg"
 export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"

@@ -1,0 +1,24 @@
+# The following files are backed up once to maintain a permanent state, because
+# they get filled with values I do not need.
+#
+# .config/discord/settings.json
+# .config/gtk-2.0/gtkrc-2.0
+# .config/gtk-3.0/settings.ini
+# .config/gtk-4.0/settings.ini
+
+.config/fish/config.fish
+.config/hypr
+.config/kitty/kitty.conf
+.config/mpv/mpv.conf
+.config/nvim
+.config/python/pythonrc
+.config/qalculate/qalc.cfg
+.config/ripgrep/config
+.config/ruff/ruff.toml
+.config/sh
+.config/topgrade.d/topgrade.toml
+.config/wget/wgetrc
+.config/yazi/yazi.toml
+.librewolf/librewolf.overrides.cfg
+.local/bin
+.local/share/default/index.theme
