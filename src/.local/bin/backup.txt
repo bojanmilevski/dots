@@ -7,7 +7,6 @@
 # .config/gtk-4.0/settings.ini
 
 .config/fish/config.fish
-.config/hypr
 .config/kitty/kitty.conf
 .config/mpv/mpv.conf
 .config/nvim

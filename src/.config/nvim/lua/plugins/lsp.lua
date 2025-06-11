@@ -1,24 +1,42 @@
 return {
-  'neovim/nvim-lspconfig',
+  'mason-org/mason-lspconfig.nvim',
   lazy = false,
 
   dependencies = {
+    'neovim/nvim-lspconfig',
     {
-      'j-hui/fidget.nvim',
-      event = 'VeryLazy',
+      'mason-org/mason.nvim',
+      dependencies = 'mason-org/mason-registry',
+      lazy = false,
       opts = {},
     },
   },
 
-  config = function()
-    local servers = require 'utils.lsps'
-    local lspconfig = require 'lspconfig'
-    for server, config in pairs(servers) do
-      lspconfig[server].setup(config)
-    end
-  end,
+  opts = {
+    automatic_enable = true,
+    ensure_installed = {
+      'bashls',
+      'clangd',
+      'cmake',
+      'cssls',
+      'emmet_ls',
+      'eslint',
+      'html',
+      'jsonls',
+      'lua_ls',
+      'pyright',
+      'ts_ls',
+      'yamlls',
+    },
+  },
 
   keys = {
+    {
+      'gd',
+      function()
+        vim.lsp.buf.definition()
+      end,
+    },
     {
       '<leader>i',
       function()

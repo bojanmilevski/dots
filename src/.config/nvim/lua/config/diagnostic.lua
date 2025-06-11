@@ -14,17 +14,7 @@ vim.diagnostic.config {
     },
   },
 
-  virtual_text = {
-    prefix = function(diagnostic)
-      if diagnostic.severity == vim.diagnostic.severity.ERROR then
-        return icons['ERROR']
-      elseif diagnostic.severity == vim.diagnostic.severity.WARN then
-        return icons['WARN']
-      elseif diagnostic.severity == vim.diagnostic.severity.INFO then
-        return icons['INFO']
-      end
-
-      return icons['HINT']
-    end,
+  virtual_lines = {
+    current_line = true,
   },
 }
