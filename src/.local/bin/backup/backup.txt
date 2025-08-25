@@ -8,10 +8,8 @@
 
 .config/fish/config.fish
 .config/kitty/kitty.conf
-.config/mpv/mpv.conf
 .config/nvim
 .config/python/pythonrc
-.config/qalculate/qalc.cfg
 .config/ripgrep/config
 .config/ruff/ruff.toml
 .config/sh

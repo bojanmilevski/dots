@@ -4,7 +4,7 @@ return {
 
   config = function()
     require('lint').linters_by_ft = {
-      javascript = { 'eslint', 'eslint_d' },
+      javascript = { 'eslint_d' },
       lua = { 'luacheck' },
     }
   end,

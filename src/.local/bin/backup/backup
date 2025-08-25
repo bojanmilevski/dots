@@ -1,6 +1,8 @@
 #!/bin/sh
 
 # NOTE: this script does not work with filenames that have empty spaces in them
+# NOTE: this script is suppose to be replaced by
+#       https://github.com/bojanmilevski/confie in the future
 
 set -e
 

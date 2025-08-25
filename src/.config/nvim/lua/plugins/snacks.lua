@@ -18,7 +18,6 @@ return {
     rename = {},
     scope = {},
     words = {},
-    zen = {},
 
     explorer = {
       replace_netrw = true,
@@ -40,6 +39,12 @@ return {
         git_hl = true,
       },
     },
+
+    zen = {
+      toggles = {
+        dim = false,
+      },
+    },
   },
 
   keys = {
@@ -56,7 +61,7 @@ return {
       end,
     },
     {
-      '<leader>pg',
+      '<leader>pw',
       function()
         Snacks.picker 'grep'
       end,
